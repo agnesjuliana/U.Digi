@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from "react-router-dom";
+import Riwayat from './pages/riwayat';
+import Home from './pages/home';
+import Notifikasi from './pages/notifikasi';
+import Setting from './pages/setting';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          INI U.DIGI KEREN BINGITSZZZ
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route component={Home} exact path="/" />
+      <Route component={Riwayat} path="/riwayat" />
+      <Route component={Notifikasi} path="/notifikasi" />
+      <Route component={Setting} path="/setting" />
+    </Switch>
   );
 }
 
