@@ -74,6 +74,7 @@ const DialogTransaksi = (props) => {
             size="small"
             sx={{ width: "100%" }}
             value={temp.nominal}
+            type="number"
             onChange={(e) => setTemp({...temp, nominal: e.target.value }, console.log(e.target.value))}
           ></TextField>
           <Typography

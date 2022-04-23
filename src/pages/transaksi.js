@@ -52,7 +52,7 @@ const Transaksi = () => {
           minHeight: "100vh",
         }}
       >
-        <TopController title="Riwayat" action={() => handleHome()} />
+        <TopController title="Transaksi" action={() => handleHome()} />
         {data.map((item, index) => (
           <TransaksiList
             kategori={item.kategori}

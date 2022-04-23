@@ -22,8 +22,8 @@ const Navigation = () => {
   const history = useHistory();
   const [value, setValue] = useState("");
   const location = useLocation();
-  const handleRiwayat = () => {
-    history.push("/riwayat");
+  const handleTransaksi = () => {
+    history.push("/transaksi");
   };
   const handleHome = () => {
     history.push("/");
@@ -74,7 +74,7 @@ const Navigation = () => {
         <BottomNavigationAction
           label="Transaksi"
           icon={<CompareArrowsRounded />}
-          onClick={() => handleRiwayat()}
+          onClick={() => handleTransaksi()}
         />
         <BottomNavigationAction
           label="Notifikasi"
