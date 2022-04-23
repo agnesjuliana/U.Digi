@@ -14,6 +14,8 @@ import {
   HomeRounded,
   NotificationsRounded,
   BuildRounded,
+  Person,
+  CompareArrowsRounded
 } from "@mui/icons-material";
 
 const Navigation = () => {
@@ -29,8 +31,8 @@ const Navigation = () => {
   const handleNotifikasi = () => {
     history.push("/notifikasi");
   };
-  const handleSetting = () => {
-    history.push("/setting");
+  const handleProfile = () => {
+    history.push("/profile");
   };
   const cek = () => {
     if (location.pathname === "/") {
@@ -70,8 +72,8 @@ const Navigation = () => {
           onClick={() => handleHome()}
         />
         <BottomNavigationAction
-          label="Riwayat"
-          icon={<RestoreRounded />}
+          label="Transaksi"
+          icon={<CompareArrowsRounded />}
           onClick={() => handleRiwayat()}
         />
         <BottomNavigationAction
@@ -80,9 +82,9 @@ const Navigation = () => {
           onClick={() => handleNotifikasi()}
         />
         <BottomNavigationAction
-          label="Setting"
-          icon={<BuildRounded />}
-          onClick={() => handleSetting()}
+          label="Profile"
+          icon={<Person />}
+          onClick={() => handleProfile()}
         />
       </BottomNavigation>
     </Paper>
