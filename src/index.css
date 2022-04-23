@@ -23,3 +23,47 @@ body{
   width: 100%;
   background-color: #008AEC;
 }
+
+.progress-container {
+  height: 0.8rem;
+  width: 100%;
+  border-radius: 0.4rem;
+
+  background: #fff;
+}
+
+.progress-container .progress {
+  height: 100%;
+  width: 0;
+  border-radius: 0.4rem;
+
+  background: #008AEC;
+
+  transition: width 0.4s ease;
+}
+
+.budgetCard{
+  width: 100%;
+  height: 180px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.labelBudget{
+  height: 78px;
+  background-color: #ff4754;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 16px 16px 0px 16px;
+}
+
+.labelBudget p{
+  font-weight: 600;
+  color: #fff;
+  line-height: 12px;
+}
+
+.labelBudget > p > span {
+  font-weight: 400;
+  opacity: 50%;
+}
