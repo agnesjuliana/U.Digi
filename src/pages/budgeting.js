@@ -27,7 +27,9 @@ const Budgeting = () => {
           title="Atur Budget"
           action={() => handleHome()}
         />
-        <Typography>Halooo ini budget</Typography>
+        <div style={{padding: "24px 16px 0px 16px"}}>
+          <p>halo</p>
+        </div>
       </Box>
     </div>
   );
