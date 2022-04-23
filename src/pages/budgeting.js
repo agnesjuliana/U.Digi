@@ -1,14 +1,13 @@
 import React from "react";
 import { useHistory } from "react-router";
-import { Typography, Button, Box } from "@mui/material";
-import Navigation from "../components/navigation";
+import { Typography, Box } from "@mui/material";
 import TopController from "../components/topController";
 
 const Budgeting = () => {
   const history = useHistory();
 
-  const handleSwitch = () => {
-    history.push("/switch");
+  const handleHome = () => {
+    history.push("/");
   };
   return (
     <div
@@ -24,7 +23,10 @@ const Budgeting = () => {
           minHeight: "100vh",
         }}
       >
-        <TopController />
+        <TopController
+          title="Atur Budget"
+          action={() => handleHome()}
+        />
         <Typography>Halooo ini budget</Typography>
       </Box>
     </div>
