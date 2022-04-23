@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import { Box, Fab } from "@mui/material";
+import { Box, Fab, Dialog, Typography, DialogContent, TextField, Button, } from "@mui/material";
 import TopController from "../components/topController";
 import BudgetCard from "../components/budgetCard";
-import DialogAddBudget from "../components/dialogAddBudget";
 import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
+
 
 const Budgeting = () => {
 
@@ -45,6 +46,17 @@ const Budgeting = () => {
     },
   ])
 
+  const [budget, setBudget] = useState([
+    {
+      id: 3,
+      category: "Listrik",
+      percentage: 0,
+      totalBudget: 0,
+      pengeluaran: 0,
+      sisa: 0
+    },
+  ])
+
   let cardList = data.map((data, index) => {
     return (
       <BudgetCard
@@ -63,17 +75,94 @@ const Budgeting = () => {
     );
   });
 
+  const DialogAddBudget = (props) => {
+    return (
+      <div>
+        <Dialog
+          open={props.open}
+          onClose={props.closeDialog}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+          PaperProps={{ style: { borderRadius: "16px" } }}
+          fullWidth
+        >
+          <DialogContent sx={{ padding: "20px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography
+                sx={{
+                  fontFamily: "poppins",
+                  fontSize: "16px",
+                  fontWeight: 600,
+                  color: "#000000",
+                }}
+              >
+                Tambah kategori pengeluaran
+              </Typography>
+              <CloseIcon onClick={props.closeDialog} />
+            </div>
+
+            <Typography
+              sx={{
+                fontFamily: "poppins",
+                fontSize: "10px",
+                fontWeight: 600,
+                color: "#000000",
+                marginTop: "24px",
+              }}
+            >
+              Kategori
+            </Typography>
+            <TextField
+              variant="outlined"
+              size="small"
+              sx={{ width: "100%", fontSize: "12px" }}
+              value={budget.category}
+              onChange={(e) => setBudget({ ...budget, ['category']: e.target.value })}
+            ></TextField>
+            <Typography
+              sx={{
+                fontFamily: "poppins",
+                fontSize: "10px",
+                fontWeight: 600,
+                color: "#000000",
+                marginTop: "8px",
+              }}
+            >
+              Batas Keluar
+            </Typography>
+            <TextField
+              id="filled-basic"
+              type='text'
+              variant="outlined"
+              size="small"
+              sx={{ width: "100%", fontSize: "12px" }}
+              value={budget.totalBudget}
+              onChange={(e) => setBudget({ ...budget, ['totalBudget']: e.target.value, ['percentage']: 0 })}
+
+            ></TextField>
+            <Button
+              variant="contained"
+              sx={{
+                textTransform: "none",
+                boxShadow: "none",
+                borderRadius: "8px",
+                backgroundColor: "#008AEC",
+                width: "100%",
+                marginTop: "32px"
+              }}
+              onClick={props.addBudget}
+            >
+              Simpan
+            </Button>
+          </DialogContent>
+        </Dialog>
+      </div>
+    );
+  };
+
   const addBudget = () => {
     setOpen(false)
-    data.push({
-      id: 3,
-      category: "Listrik",
-      percentage: 0,
-      totalBudget: 500000,
-      pengeluaran: 0,
-      sisa: 500000
-    })
-    localStorage.setItem("data", JSON.stringify(this.data));
+    data.push(budget)
   }
 
   return (
@@ -96,8 +185,18 @@ const Budgeting = () => {
         <div style={{ padding: "24px 16px 0px 16px" }}>
           {cardList}
         </div>
+        <TextField
+              id="filled-basic"
+              type='text'
+              variant="outlined"
+              size="small"
+              sx={{ width: "100%", fontSize: "12px" }}
+              value={budget.totalBudget}
+              onChange={(e) => setBudget({ ...budget, ['totalBudget']: e.target.value, ['percentage']: 0 })}
+
+            ></TextField>
         <Fab
-          sx={{ marginLeft: "16px"}}
+          sx={{ marginLeft: "16px" }}
           variant="extended"
           color="primary"
           aria-label="add"

@@ -8,6 +8,7 @@ import Budgeting from './pages/budgeting';
 import TukarSaldo from './pages/TukarSaldo'
 import TransferSaldo from './pages/TransferSaldo'
 import Pay from './pages/pay';
+import uTracker from './pages/uTracker';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route component={Pay} path="/upay" />
       <Route component={TukarSaldo} path="/uswitch/tukarsaldo" />
       <Route component={TransferSaldo} path="/uswitch/transfersaldo" />
+      <Route component={uTracker} path="/utracker" />
     </Switch>
   );
 }
