@@ -13,17 +13,17 @@ const Transaksi = () => {
     {
       kategori: "makanan",
       nominal: 20000,
-      tanggal: "23/04/2022",
+      tanggal: "04/23/2022",
     },
     {
       kategori: "listrik",
       nominal: 20000,
-      tanggal: "21/04/2022",
+      tanggal: "04/21/2022",
     },
     {
       kategori: "tagihan",
       nominal: 20000,
-      tanggal: "20/04/2022",
+      tanggal: "04/20/2022",
     },
   ]);
 
