@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, MenuItem, Select, Button, Paper, TextField } from "@mui/material";
 import TopController from "../components/topController";
-import DialogTukarSaldo from "../components/dialogTukarSaldo";
+import DialogTukarSaldo from "../components/DialogTukarSaldo";
 
 export default function TukarSaldo() {
   const handleHome = () => {

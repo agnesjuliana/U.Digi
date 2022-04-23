@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, MenuItem, Select, Button, Paper, TextField } from "@mui/material";
 import TopController from "../components/topController";
-import DialogTukarSaldo from "../components/dialogTukarSaldo";
+import DialogTransferSaldo from "../components/DialogTransferSaldo";
 
 export default function TransferSaldo() {
   const handleHome = () => {
@@ -19,7 +19,8 @@ export default function TransferSaldo() {
   const [data, setData] = React.useState({
     from: "Shopee Pay",
     to: "LinkAja",
-    nominal: 0
+    nominal: 0,
+    no: '+62'
   })
   const [view, setView] = React.useState({
     form: 'block',
@@ -51,10 +52,10 @@ export default function TransferSaldo() {
           minHeight: "100vh",
         }}
       >
-        <DialogTukarSaldo open={open} closeDialog={() => closeDialog()} />
+        <DialogTransferSaldo open={open} closeDialog={() => closeDialog()} data={data}/>
 
         <TopController
-          title="Tukar Saldo"
+          title="Transfer Saldo"
           action={() => handleHome()}
         />
 
@@ -103,6 +104,14 @@ export default function TransferSaldo() {
                 }
               </Select>
 
+              <p style={{ marginBottom: 2 }}><b>Nomor Tujuan</b></p>
+              <TextField id="filled-basic" label="+62" variant="filled"
+                type='text'
+                value={data.no}
+                sx={{ width: '100%' }}
+                onChange={(e) => setData({ ...data, ['no']: e.target.value })}
+              />
+
               <p style={{ marginBottom: 2 }}><b>Nominal</b></p>
               <TextField id="filled-basic" label="Rp" variant="filled"
                 type='number'
@@ -136,7 +145,7 @@ export default function TransferSaldo() {
               <Box sx={{ marginLeft: 3, marginTop: 1, marginBottom: 1, display: 'flex', flexDirection: 'column' }}>
                 <p><b>Pastikan semua data benar</b></p>
                 <p style={{ marginTop: '0', fontSize: '12px' }}>
-                  Sebelum melakukan transaksi pastikan semua data benar dan lanjutkan pertukaran e-money.
+                  Sebelum melakukan transaksi pastikan semua data benar dan lanjutkan transfer e-money.
                 </p>
 
                 <p style={{ marginBottom: '0', fontSize: '12px' }}><b>E-Wallet Asal</b></p>
@@ -145,7 +154,13 @@ export default function TransferSaldo() {
                 <p style={{ marginBottom: '0', fontSize: '12px' }}><b>E-Wallet Tujuan</b></p>
                 <p style={{ marginTop: '0', fontSize: '14px' }}>{data.to} </p>
 
-                <p style={{ marginBottom: '0', fontSize: '12px' }}><b>Nominal yang akan ditukar</b></p>
+                <p style={{ marginBottom: '0', fontSize: '12px' }}><b>Nomor Tujuan</b></p>
+                <p style={{ marginTop: '0', fontSize: '14px' }}>{data.no} </p>
+
+                <p style={{ marginBottom: '0', fontSize: '12px' }}><b>Nama Penerima</b></p>
+                <p style={{ marginTop: '0', fontSize: '14px' }}>Gata</p>
+
+                <p style={{ marginBottom: '0', fontSize: '12px' }}><b>Nominal yang akan ditransfer</b></p>
                 <p style={{ marginTop: '0', fontSize: '14px' }}>Rp {data.nominal} </p>
 
               </Box>
@@ -160,7 +175,7 @@ export default function TransferSaldo() {
                 sx={{ backgroundColor: '#008AEC', fontFamily: 'Poppins', textTransform: 'capitalize', boxShadow: 0, borderRadius: '8px' }}
                 onClick={() => openDialog()}
               >
-                Tukar e-money saya
+                Kirim
               </Button>
             </Box>
           </Box>
