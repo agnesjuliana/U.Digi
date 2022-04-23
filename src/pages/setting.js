@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
-import { Grid, Typography, Button } from "@mui/material";
+import { Grid, Typography, Button, Box } from "@mui/material";
 import Navigation from "../components/navigation";
 
 const Setting = () => {
@@ -10,9 +10,22 @@ const Setting = () => {
       history.push("/")
   };
   return (
-    <div>
-      <Typography>Halooo ini Setting</Typography>
-      <Navigation />
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <Box
+        sx={{
+          width: "480px",
+          backgroundColor: "#f7f7f7",
+          minHeight: "100vh",
+        }}
+      >
+        <Typography>Halooo ini setting</Typography>
+        <Navigation />
+      </Box>
     </div>
   );
 };
