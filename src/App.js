@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
-import Riwayat from './pages/riwayat';
+import Transaksi from './pages/transaksi';
 import Home from './pages/home';
 import Notifikasi from './pages/notifikasi';
 import Profile from './pages/profile';
@@ -13,7 +13,7 @@ function App() {
   return (
     <Switch>
       <Route component={Home} exact path="/" />
-      <Route component={Riwayat} path="/riwayat" />
+      <Route component={Transaksi} path="/transaksi" />
       <Route component={Notifikasi} path="/notifikasi" />
       <Route component={Profile} path="/profile" />
       <Route component={Budgeting} path="/budgeting" />

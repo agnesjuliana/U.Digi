@@ -37,11 +37,11 @@ const Navigation = () => {
   const cek = () => {
     if (location.pathname === "/") {
       setValue(0);
-    } else if (location.pathname === "/riwayat") {
+    } else if (location.pathname === "/transaksi") {
       setValue(1);
     } else if (location.pathname === "/notifikasi") {
       setValue(2);
-    } else if (location.pathname === "/setting") {
+    } else if (location.pathname === "/profile") {
       setValue(3);
     }
   };
