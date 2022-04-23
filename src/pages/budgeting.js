@@ -185,16 +185,6 @@ const Budgeting = () => {
         <div style={{ padding: "24px 16px 0px 16px" }}>
           {cardList}
         </div>
-        <TextField
-              id="filled-basic"
-              type='text'
-              variant="outlined"
-              size="small"
-              sx={{ width: "100%", fontSize: "12px" }}
-              value={budget.totalBudget}
-              onChange={(e) => setBudget({ ...budget, ['totalBudget']: e.target.value, ['percentage']: 0 })}
-
-            ></TextField>
         <Fab
           sx={{ marginLeft: "16px" }}
           variant="extended"

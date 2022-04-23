@@ -34,6 +34,12 @@ const Home = () => {
   const handleSend = () => {
     history.push("/uswitch/transfersaldo");
   };
+  const handlePay = () => {
+    history.push("/upay");
+  };
+  const handleTracker = () => {
+    history.push("/utracker");
+  };
   const openDialog = () => {
     setOpen(true)
   }
@@ -193,7 +199,7 @@ const Home = () => {
                 borderRadius: "10px",
                 maxWidth: "45px",
               }}
-              disabled
+              onClick={() => handleTracker()}
               style={{ backgroundColor: "#09B44D" }}
             >
               <TimelineRounded sx={{ color: "white" }} />
@@ -224,8 +230,8 @@ const Home = () => {
                 borderRadius: "10px",
                 maxWidth: "45px",
               }}
-              disabled
               style={{ backgroundColor: "#FF3131" }}
+              onClick={() => handlePay()}
             >
               <AccountBalanceWalletRounded sx={{ color: "white" }} />
             </IconButton>
