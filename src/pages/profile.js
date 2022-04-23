@@ -25,10 +25,12 @@ const Profile = () => {
         }}
       >
         <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <img src={profileImg} style={{
-            borderRadius: '50%', width: '150px', height: '150px',
-            position: 'absolute', top: '100px', left: '20px'
-          }} />
+          <Box sx={{position:'relative'}}>
+            <img src={profileImg} style={{
+              borderRadius: '50%', width: '150px', height: '150px', 
+              position: 'absolute', top: '70px', left: '20px'
+            }} />
+          </Box>
           <Box sx={{ width: '100%', height: '20vh', backgroundColor: '#008AEC' }} />
 
           <Box sx={{ marginTop: '10vh', marginX: 3 }}>
