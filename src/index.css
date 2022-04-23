@@ -43,7 +43,7 @@ body{
 }
 .progress-container .progress2 {
   height: 100%;
-  width: 50%;
+  width: 50%  ;
   border-radius: 0.4rem;
 
   background: #008AEC;
