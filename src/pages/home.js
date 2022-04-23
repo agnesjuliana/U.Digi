@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useHistory } from "react-router";
 import {
   Typography,
@@ -19,13 +19,21 @@ import {
   MiscellaneousServicesRounded,
   ArrowForwardIosRounded,
 } from "@mui/icons-material";
+import DialogNotif from "../components/dialog";
 
 const Home = () => {
   const history = useHistory();
+  const [open, setOpen] = useState(false)
 
-  const handleSwitch = () => {
-    history.push("/switch");
+  const handleBudgeting = () => {
+    history.push("/budgeting");
   };
+  const openDialog = () => {
+    setOpen(true)
+  }
+  const closeDialog = () => {
+    setOpen(false)
+  }
   return (
     <div
       style={{
@@ -33,6 +41,7 @@ const Home = () => {
         justifyContent: "center",
       }}
     >
+      
       <Box
         sx={{
           width: "480px",
@@ -40,6 +49,7 @@ const Home = () => {
           minHeight: "100vh",
         }}
       >
+        <DialogNotif open={open} closeDialog={() => closeDialog()} />
         <Box
           sx={{
             backgroundColor: "#008AEC",
@@ -93,7 +103,7 @@ const Home = () => {
                 marginRight: "16px",
               }}
             >
-              <img src={linkAja} style={{ width: "36px" }}></img>
+              <img src={linkAja} style={{ width: "36px" }} onClick={() => openDialog()}></img>
               <Box sx={{ marginLeft: "8px" }}>
                 <Typography
                   sx={{
@@ -300,24 +310,28 @@ const Home = () => {
           }}
         >
           <MiscellaneousServicesRounded
-            sx={{ color: "#008AEC", fontSize: "22px" }}
+            sx={{ color: "#008AEC", fontSize: "20px" }}
           />
           <Typography
             sx={{
               fontFamily: "poppins",
-              fontSize: "16px",
+              fontSize: "14px",
               fontWeight: 600,
               color: "#008AEC",
             }}
           >
             Yuk, atur budget pengeluaranmu!
           </Typography>
-          <ArrowForwardIosRounded sx={{ color: "#008AEC", fontSize: "22px" }} />
+          <IconButton onClick={() => handleBudgeting()}>
+            <ArrowForwardIosRounded
+              sx={{ color: "#008AEC", fontSize: "20px" }}
+            />
+          </IconButton>
         </Box>
         <Typography
           sx={{
             fontFamily: "poppins",
-            fontSize: "16px",
+            fontSize: "15px",
             fontWeight: 600,
             color: "#000000",
             marginLeft: "16px",
@@ -343,7 +357,7 @@ const Home = () => {
             borderRadius: "16px",
             margin: "16px",
             maxWidth: "342px",
-            pb: 2
+            pb: 2,
           }}
         >
           <CardMedia
@@ -372,7 +386,7 @@ const Home = () => {
               fontWeight: 400,
               color: "#000000",
               marginLeft: "16px",
-              marginTop: "4px"
+              marginTop: "4px",
             }}
           >
             Yang kaya gini udah pasti impian tiap orang deh...
