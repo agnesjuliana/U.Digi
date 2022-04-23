@@ -28,6 +28,12 @@ const Home = () => {
   const handleBudgeting = () => {
     history.push("/budgeting");
   };
+  const handleSwitch = () => {
+    history.push("/uswitch/tukarsaldo");
+  };
+  const handleSend = () => {
+    history.push("/uswitch/transfersaldo");
+  };
   const openDialog = () => {
     setOpen(true)
   }
@@ -249,7 +255,7 @@ const Home = () => {
                 borderRadius: "10px",
                 maxWidth: "45px",
               }}
-              disabled
+              onClick={() => handleSwitch()}
               style={{ backgroundColor: "#0094FF" }}
             >
               <ImportExportRounded sx={{ color: "white" }} />
@@ -280,7 +286,7 @@ const Home = () => {
                 borderRadius: "10px",
                 maxWidth: "45px",
               }}
-              disabled
+              onClick={() => handleSend()}
               style={{ backgroundColor: "#FFD600" }}
             >
               <SendRounded sx={{ color: "white" }} />
