@@ -85,7 +85,6 @@ const Navigation = () => {
           onClick={() => handleSetting()}
         />
       </BottomNavigation>
-      {console.log(value)}
     </Paper>
   );
 };

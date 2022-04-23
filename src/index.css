@@ -23,3 +23,88 @@ body{
   width: 100%;
   background-color: #008AEC;
 }
+
+.progress-container {
+  height: 0.8rem;
+  width: 100%;
+  border-radius: 0.4rem;
+
+  background: #fff;
+}
+
+.progress-container .progress1 {
+  height: 100%;
+  width: 35%;
+  border-radius: 0.4rem;
+
+  background: #008AEC;
+
+  transition: width 0.4s ease;
+}
+.progress-container .progress2 {
+  height: 100%;
+  width: 50%  ;
+  border-radius: 0.4rem;
+
+  background: #008AEC;
+
+  transition: width 0.4s ease;
+}
+.progress-container .progress3 {
+  height: 100%;
+  width: 0;
+  border-radius: 0.4rem;
+
+  background: #008AEC;
+
+  transition: width 0.4s ease;
+}
+
+.budgetCard{
+  width: 100%;
+  min-height: 180px;
+  background-color: #fff;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.labelBudget{
+  height: 78px;
+  background-color: #ff4754;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 16px 16px 0px 16px;
+}
+
+.labelBudget p{
+  font-weight: 600;
+  color: #fff;
+  line-height: 12px;
+}
+
+.labelBudget > p > span {
+  font-weight: 400;
+  opacity: 50%;
+}
+
+.detailBudget{
+  padding: 16px;
+}
+
+.rowBudget{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.sisa{
+  font-weight: 600;
+  line-height: 18px;
+  font-size: 12px;
+}
+
+.detailTextBudget{
+  line-height: 18px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
