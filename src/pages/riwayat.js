@@ -134,7 +134,8 @@ const Riwayat = () => {
               marginTop: "8px",
               marginRight: "8px",
               maxWidth: "100px",
-              boxShadow: "none"
+              boxShadow: "none",
+              textTransform: "none"
             }}
           >
             Tambah
