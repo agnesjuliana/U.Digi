@@ -169,7 +169,7 @@ const Home = () => {
                     color: "#000000",
                   }}
                 >
-                  Rp600.000
+                  Rp400.000
                 </Typography>
               </Box>
             </Box>

@@ -34,7 +34,7 @@ const DialogTransaksi = (props) => {
     var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = date.getFullYear();
     
-    return mm + '/' + dd + '/' + yyyy;
+    return dd + '/' + mm + '/' + yyyy;
   }
 
   return (
