@@ -7,6 +7,7 @@ import Setting from './pages/setting';
 import Budgeting from './pages/budgeting';
 import TukarSaldo from './pages/TukarSaldo'
 import TransferSaldo from './pages/TransferSaldo'
+import uTracker from './pages/uTracker';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route component={Budgeting} path="/budgeting" />
       <Route component={TukarSaldo} path="/uswitch/tukarsaldo" />
       <Route component={TransferSaldo} path="/uswitch/transfersaldo" />
+      <Route component={uTracker} path="/utracker" />
     </Switch>
   );
 }
