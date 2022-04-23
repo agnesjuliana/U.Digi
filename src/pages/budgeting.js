@@ -1,34 +1,74 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { Box } from "@mui/material";
 import TopController from "../components/topController";
 import BudgetCard from "../components/budgetCard";
 
 const Budgeting = () => {
+
+  useEffect(() => {
+    // dataPlay();
+    localStorage.setItem('data', JSON.stringify(data));
+  }, []);
+
   const history = useHistory();
 
   const handleHome = () => {
     history.push("/");
   };
 
-  const progressbar = document.querySelector(".progress");
+  const [data, setData] = useState([
+    {
+      id: 1,
+      category: "Makanan",
+      percentage: 35,
+      totalBudget: 500000,
+      pengeluaran: 200000,
+      sisa: 300000
+    },
+    {
+      id: 2,
+      category: "Pengobatan",
+      percentage: 50,
+      totalBudget: 500000,
+      pengeluaran: 250000,
+      sisa: 250000
+    },
+  ])
 
-  const changeProgress = (progress) => {
-    progressbar.style.width = progress + `%`;
-  };
+  // const progressbar1 = document.querySelector(".progress1");
+  //   progressbar1.style.width = progress + `%`;
+  // };
 
-  /* change progress after 1 second (only for showcase) */
-  // setTimeout(() => changeProgress(22), 1000);
-  // setTimeout(() => changeProgress(45), 2000);
-  // setTimeout(() => changeProgress(85), 4600);
-  // setTimeout(() => changeProgress(98), 5266);
-  // setTimeout(() => changeProgress(100), 8000);
+  // const progressbar2 = document.querySelector(".progress2");
 
-  useEffect(() => {
-    // Update the document title using the browser API
-    // document.title = `You clicked ${count} times`;
-    setTimeout(() => changeProgress(22), 100);
-  }, []);
+  // const changeProgress2 = (progress) => {
+  //   progressbar2.style.width = progress + `%`;
+  // };
+
+  // const dataPlay = () => {
+  //   setTimeout(() => changeProgress1(35), 100);
+  //   setTimeout(() => changeProgress2(50), 100);
+  // }
+
+
+  let cardList = data.map((data, index) => {
+    return (
+      <BudgetCard
+        key={index}
+        category={data.category}
+        chart={
+          <div class="progress-container">
+            <div class={"progress" + data.id}></div>
+          </div>
+        }
+        percentage={" " + data.percentage + "%"}
+        sisaBudget={data.sisa}
+        pengeluaran={data.pengeluaran}
+        totalBudget={data.totalBudget}
+      />
+    );
+  });
 
   return (
     <div
@@ -49,7 +89,7 @@ const Budgeting = () => {
           action={() => handleHome()}
         />
         <div style={{ padding: "24px 16px 0px 16px" }}>
-          <BudgetCard
+          {/* <BudgetCard
             category="Makanan"
             chart={
               <div class="progress-container">
@@ -57,7 +97,11 @@ const Budgeting = () => {
               </div>
             }
             percentage=" 22%"
-          />
+            sisaBudget="100000"
+            pengeluaran="200000"
+            totalBudget="400000"
+          /> */}
+          {cardList}
         </div>
       </Box>
     </div>
