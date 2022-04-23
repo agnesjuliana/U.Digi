@@ -5,6 +5,9 @@ import Home from './pages/home';
 import Notifikasi from './pages/notifikasi';
 import Setting from './pages/setting';
 import Budgeting from './pages/budgeting';
+import TukarSaldo from './pages/TukarSaldo'
+import TransferSaldo from './pages/TransferSaldo'
+
 
 function App() {
   return (
@@ -14,6 +17,8 @@ function App() {
       <Route component={Notifikasi} path="/notifikasi" />
       <Route component={Setting} path="/setting" />
       <Route component={Budgeting} path="/budgeting" />
+      <Route component={TukarSaldo} path="/uswitch/tukarsaldo" />
+      <Route component={TransferSaldo} path="/uswitch/transfersaldo" />
     </Switch>
   );
 }
