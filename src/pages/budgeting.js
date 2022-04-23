@@ -57,7 +57,7 @@ const Budgeting = () => {
           minHeight: "100vh",
         }}
       >
-        <TopController title="Riwayat" action={() => handleHome()} />
+        <TopController title="Atur Budget" action={() => handleHome()} />
         <div style={{ padding: "24px 16px 0px 16px" }}>
           {data.map((data, index) => (
             <BudgetCard
@@ -77,7 +77,7 @@ const Budgeting = () => {
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Fab
-          sx={{ marginRight: "16px" }}
+          sx={{ marginLeft: "16px" }}
           variant="extended"
           color="primary"
           aria-label="add"
