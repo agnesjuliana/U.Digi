@@ -20,7 +20,7 @@ const Profile = () => {
       <Box
         sx={{
           width: "480px",
-          backgroundColor: "#e5e5e5",
+          backgroundColor: "#F4F4F4",
           minHeight: "100vh",
         }}
       >

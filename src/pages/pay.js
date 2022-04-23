@@ -42,7 +42,7 @@ const Pay = () => {
       >
 
         <TopController
-          title="Transfer Saldo"
+          title="U.Pay"
           action={() => handleHome()}
         />
 
