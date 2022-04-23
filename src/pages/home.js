@@ -23,6 +23,7 @@ const Home = () => {
           minHeight: "100vh",
         }}
       >
+        
         <Typography>Halooo ini home</Typography>
         <Navigation />
       </Box>
