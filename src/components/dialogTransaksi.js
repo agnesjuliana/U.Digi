@@ -97,7 +97,7 @@ const DialogTransaksi = (props) => {
                 setTemp({...temp, tanggal: dateFormat(newValue) });
               }}
               renderInput={(params) => (
-                <TextField {...params} size="small" fullWidth  placeholder="MM/DD/YYY"/>
+                <TextField {...params} size="small" fullWidth  placeholder="mm/dd/yyyy"/>
               )}
             />
           </LocalizationProvider>
