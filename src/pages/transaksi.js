@@ -5,6 +5,7 @@ import Navigation from "../components/navigation";
 import TopController from "../components/topController";
 import TransaksiList from "../components/transaksi";
 import DialogTransaksi from "../components/dialogTransaksi";
+import formatRupiah from "../helper/rupiah"
 
 const Transaksi = () => {
   const history = useHistory();
@@ -12,17 +13,17 @@ const Transaksi = () => {
   const [data, setData] = useState([
     {
       kategori: "makanan",
-      nominal: 20000,
+      nominal: formatRupiah("20000"),
       tanggal: "04/23/2022",
     },
     {
       kategori: "listrik",
-      nominal: 20000,
+      nominal: formatRupiah("20000"),
       tanggal: "04/21/2022",
     },
     {
       kategori: "tagihan",
-      nominal: 20000,
+      nominal: formatRupiah("20000"),
       tanggal: "04/20/2022",
     },
   ]);

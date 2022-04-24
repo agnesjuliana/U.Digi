@@ -14,10 +14,11 @@ import DateTimePicker from "@mui/lab/DateTimePicker";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import format from "date-fns/format";
+import formatRupiah from "../helper/rupiah";
 
 const DialogTransaksi = (props) => {
   const [temp, setTemp] = useState({
-    nominal: 0,
+    nominal: "",
     kategori: "",
     tanggal: "",
   });
@@ -74,8 +75,8 @@ const DialogTransaksi = (props) => {
             size="small"
             sx={{ width: "100%" }}
             value={temp.nominal}
-            type="number"
-            onChange={(e) => setTemp({...temp, nominal: e.target.value }, console.log(e.target.value))}
+            type="text"
+            onChange={(e) => setTemp({...temp, nominal: formatRupiah(e.target.value)})}
           ></TextField>
           <Typography
             sx={{
@@ -92,7 +93,6 @@ const DialogTransaksi = (props) => {
             <DatePicker
               value={temp.tanggal}
               onChange={(newValue) => {
-                console.log(newValue.getTime())
                 setTemp({...temp, tanggal: dateFormat(newValue) });
               }}
               renderInput={(params) => (
@@ -118,7 +118,7 @@ const DialogTransaksi = (props) => {
           >
             Pilih Kategori
           </Typography>
-          <Select sx={{ width: "100%" }} size="small" onChange={(e) => setTemp({...temp, kategori: e.target.value})}>
+          <Select sx={{ width: "100%" }} size="small" onChange={(e) => setTemp({...temp, kategori: e.target.value})} value={temp.kategori}>
             <MenuItem value="makanan">Makanan</MenuItem>
             <MenuItem value="laundry">Laundry</MenuItem>
             <MenuItem value="transportasi">Trasnportasi</MenuItem>

@@ -2,6 +2,7 @@ import React from "react";
 import { Box, MenuItem, Select, Button, Paper, TextField } from "@mui/material";
 import TopController from "../components/topController";
 import DialogTukarSaldo from "../components/DialogTukarSaldo";
+import formatRupiah from "../helper/rupiah";
 
 export default function TukarSaldo() {
   const handleHome = () => {
@@ -105,10 +106,10 @@ export default function TukarSaldo() {
 
               <p style={{ marginBottom: 2 }}><b>Nominal</b></p>
               <TextField id="filled-basic" label="Rp" variant="filled"
-                type='number'
+                type='text'
                 value={data.nominal}
                 sx={{ width: '100%' }}
-                onChange={(e) => setData({ ...data, ['nominal']: e.target.value })}
+                onChange={(e) => setData({ ...data, ['nominal']: formatRupiah(e.target.value) })}
               />
 
             </Box>
@@ -146,7 +147,7 @@ export default function TukarSaldo() {
                 <p style={{ marginTop: '0', fontSize: '14px' }}>{data.to} </p>
 
                 <p style={{ marginBottom: '0', fontSize: '12px' }}><b>Nominal yang akan ditukar</b></p>
-                <p style={{ marginTop: '0', fontSize: '14px' }}>Rp {data.nominal} </p>
+                <p style={{ marginTop: '0', fontSize: '14px' }}>Rp{data.nominal} </p>
 
               </Box>
             </Box>

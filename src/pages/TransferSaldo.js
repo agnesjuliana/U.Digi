@@ -2,6 +2,7 @@ import React from "react";
 import { Box, MenuItem, Select, Button, Paper, TextField } from "@mui/material";
 import TopController from "../components/topController";
 import DialogTransferSaldo from "../components/DialogTransferSaldo";
+import formatRupiah from "../helper/rupiah";
 
 export default function TransferSaldo() {
   const handleHome = () => {
@@ -114,10 +115,10 @@ export default function TransferSaldo() {
 
               <p style={{ marginBottom: 2 }}><b>Nominal</b></p>
               <TextField id="filled-basic" label="Rp" variant="filled"
-                type='number'
+                type='text'
                 value={data.nominal}
                 sx={{ width: '100%' }}
-                onChange={(e) => setData({ ...data, ['nominal']: e.target.value })}
+                onChange={(e) => setData({ ...data, ['nominal']: formatRupiah(e.target.value) })}
               />
 
             </Box>
@@ -161,7 +162,7 @@ export default function TransferSaldo() {
                 <p style={{ marginTop: '0', fontSize: '14px' }}>Gata</p>
 
                 <p style={{ marginBottom: '0', fontSize: '12px' }}><b>Nominal yang akan ditransfer</b></p>
-                <p style={{ marginTop: '0', fontSize: '14px' }}>Rp {data.nominal} </p>
+                <p style={{ marginTop: '0', fontSize: '14px' }}>Rp{data.nominal} </p>
 
               </Box>
             </Box>

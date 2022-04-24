@@ -32,8 +32,7 @@ const TransaksiList = (props) => {
             color: "#000000",
           }}
         >
-          {`Kamu telah melakukan transaksi sebesar Rp${props.nominal} untuk baso aci kang
-          asep pada tanggal ${props.tanggal}`}
+          {`Kamu telah melakukan transaksi sebesar Rp${props.nominal} pada tanggal ${props.tanggal}`}
         </Typography>
       </Box>
     </div>
