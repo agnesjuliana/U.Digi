@@ -7,7 +7,7 @@ import TransaksiList from "../components/transaksi";
 import DialogBudget from "../components/dialogBudget";
 import BudgetCard from "../components/budgetCard";
 import AddIcon from '@mui/icons-material/Add';
-
+import formatRupiah from "../helper/rupiah";
 
 
 const Budgeting = () => {
@@ -18,17 +18,17 @@ const Budgeting = () => {
       id: 1,
       category: "Makanan",
       percentage: 35,
-      totalBudget: 500000,
-      pengeluaran: 200000,
-      sisa: 300000
+      totalBudget: formatRupiah("500000"),
+      pengeluaran: formatRupiah("200000"),
+      sisa: formatRupiah("300000")
     },
     {
       id: 2,
       category: "Pengobatan",
       percentage: 50,
-      totalBudget: 500000,
-      pengeluaran: 250000,
-      sisa: 250000
+      totalBudget: formatRupiah("500000"),
+      pengeluaran: formatRupiah("250000"),
+      sisa: formatRupiah("250000")
     },
   ]);
 

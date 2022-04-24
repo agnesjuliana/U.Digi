@@ -5,11 +5,6 @@ import Navigation from "../components/navigation";
 import profileImg from '../assets/profile.jpg'
 
 const Profile = () => {
-  const history = useHistory();
-
-  const handleHome = () => {
-    history.push("/")
-  };
   return (
     <div
       style={{

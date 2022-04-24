@@ -77,6 +77,7 @@ const DialogTransaksi = (props) => {
             value={temp.nominal}
             type="text"
             onChange={(e) => setTemp({...temp, nominal: formatRupiah(e.target.value)})}
+            placeholder="Rp"
           ></TextField>
           <Typography
             sx={{
@@ -96,7 +97,7 @@ const DialogTransaksi = (props) => {
                 setTemp({...temp, tanggal: dateFormat(newValue) });
               }}
               renderInput={(params) => (
-                <TextField {...params} size="small" fullWidth />
+                <TextField {...params} size="small" fullWidth  placeholder="MM/DD/YYY"/>
               )}
             />
           </LocalizationProvider>
