@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router";
 import { Box } from "@mui/material";
 import TopController from "../components/topController";
 import Track1 from '../../src/assets/Group 444.png'
@@ -7,10 +6,8 @@ import Track2 from '../../src/assets/Group 445.png'
 
 const uTracker = () => {
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const history = useHistory();
   const handleHome = () => {
-    history.push("/");
+    window.location="/";
   };
   return (
     <div

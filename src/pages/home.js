@@ -1,10 +1,7 @@
-import React, {useState} from "react";
-import { useHistory } from "react-router";
+import React, { useState } from "react";
 import {
   Typography,
-  Button,
   Box,
-  Grid,
   IconButton,
   CardMedia,
 } from "@mui/material";
@@ -20,29 +17,39 @@ import {
   ArrowForwardIosRounded,
 } from "@mui/icons-material";
 import DialogNotif from "../components/dialog";
+import addNotification from 'react-push-notification';
 
 const Home = () => {
-  const history = useHistory();
   const [open, setOpen] = useState(false)
 
   const handleBudgeting = () => {
-    history.push("/budgeting");
+    window.location="/budgeting";
   };
   const handleSwitch = () => {
-    history.push("/uswitch/tukarsaldo");
+    window.location="/uswitch/tukarsaldo";
   };
   const handleSend = () => {
-    history.push("/uswitch/transfersaldo");
+    window.location="/uswitch/transfersaldo";
   };
   const handlePay = () => {
-    history.push("/upay");
+    window.location="/upay";
   };
   const handleTracker = () => {
-    history.push("/utracker");
+    window.location="/utracker";
   };
   const openDialog = () => {
     setOpen(true)
   }
+  const buttonClick = () => {
+    addNotification({
+      title: 'Transaksi terdeteksi',
+      // subtitle:'halo',
+      message: 'Isi rincian pengeluaranmu sekarang',
+      // theme:'white',
+      // native:true
+    })
+
+  };
   const closeDialog = () => {
     setOpen(false)
   }
@@ -53,7 +60,7 @@ const Home = () => {
         justifyContent: "center",
       }}
     >
-      
+
       <Box
         sx={{
           width: "480px",
@@ -89,9 +96,9 @@ const Home = () => {
           >
             Rp1.000.000
           </Typography>
-          <Button
+          <button
             variant="contained"
-            sx={{
+            style={{
               textTransform: "none",
               fontFamily: "poppins",
               backgroundColor: "#139DFF",
@@ -100,10 +107,15 @@ const Home = () => {
               fontSize: "10px",
               marginTop: "8px",
               marginBottom: "8px",
+              border:"0px",
+              color:"#fff",
+              padding:"3px",
+              width:"90px"
             }}
+            onClick={buttonClick}
           >
             Lihat Semua
-          </Button>
+          </button>
           <Box sx={{ display: "flex" }}>
             <Box
               sx={{

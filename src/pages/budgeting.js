@@ -33,7 +33,7 @@ const Budgeting = () => {
   ]);
 
   const handleHome = () => {
-    history.push("/");
+    window.location="/";
   };
   const openDialog = () => {
     setOpen(true)

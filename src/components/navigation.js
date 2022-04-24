@@ -1,38 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useLocation } from "react-router";
+import { useLocation } from "react-router";
 import {
-  Typography,
-  Button,
   Paper,
   BottomNavigation,
   BottomNavigationAction,
 } from "@mui/material";
 import {
-  RestoreRounded,
-  Favorite,
-  Archive,
   HomeRounded,
   NotificationsRounded,
-  BuildRounded,
   Person,
   CompareArrowsRounded
 } from "@mui/icons-material";
 
 const Navigation = () => {
-  const history = useHistory();
   const [value, setValue] = useState("");
   const location = useLocation();
   const handleTransaksi = () => {
-    history.push("/transaksi");
+    window.location="/transaksi";
   };
   const handleHome = () => {
-    history.push("/");
+    window.location="/";
   };
   const handleNotifikasi = () => {
-    history.push("/notifikasi");
+    window.location="/notifikasi";
   };
   const handleProfile = () => {
-    history.push("/profile");
+    window.location="/profile";
   };
   const cek = () => {
     if (location.pathname === "/") {
@@ -55,7 +48,6 @@ const Navigation = () => {
         bottom: 0,
         right: 0,
         left: 0,
-        // minWidth: "480px",
       }}
       elevation={4}
     >
