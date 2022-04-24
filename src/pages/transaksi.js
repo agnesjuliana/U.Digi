@@ -29,7 +29,7 @@ const Transaksi = () => {
   ]);
 
   const handleHome = () => {
-    history.push("/");
+    window.location="/";
   };
   const openDialog = () => {
     setOpen(true)

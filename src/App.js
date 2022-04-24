@@ -20,7 +20,7 @@ function App() {
     setTimeout(() => {
       setLoading(false);
       // 1000 milisecond
-    }, 500);
+    }, 300);
   }, []);
   return (
     <div>

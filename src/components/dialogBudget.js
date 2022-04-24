@@ -9,15 +9,16 @@ import {
   Button,
 } from "@mui/material";
 import { } from "@mui/icons-material";
+import formatRupiah from "../helper/rupiah";
 
 const DialogTransaksi = (props) => {
   const [temp, setTemp] = useState({
     id: 3,
     category: "",
     percentage: 0,
-    totalBudget: 0,
+    totalBudget: "",
     pengeluaran: 0,
-    sisa: 0
+    sisa: ""
   });
 
   const Add = () => {
@@ -62,10 +63,11 @@ const DialogTransaksi = (props) => {
           <TextField
             variant="outlined"
             size="small"
-            sx={{ width: "100%" }}
+            sx={{ width: "100%"}}
             value={temp.category}
             type="text"
             onChange={(e) => setTemp({ ...temp, category: e.target.value }, console.log(e.target.value))}
+            placeholder="contoh : makanan"
           ></TextField>
           <Typography
             sx={{
@@ -76,15 +78,16 @@ const DialogTransaksi = (props) => {
               marginTop: "8px",
             }}
           >
-            Total budget
+            Nominal total budget
           </Typography>
           <TextField
             variant="outlined"
             size="small"
             sx={{ width: "100%" }}
             value={temp.totalBudget}
-            type="number"
-            onChange={(e) => setTemp({ ...temp, totalBudget: e.target.value, sisa: e.target.value }, console.log(e.target.value))}
+            type="text"
+            placeholder="Rp"
+            onChange={(e) => setTemp({ ...temp, totalBudget: formatRupiah(e.target.value), sisa: formatRupiah(e.target.value) }, console.log(e.target.value))}
           ></TextField>
 
           <Button

@@ -10,7 +10,7 @@ const Notifikasi = () => {
   const history = useHistory();
 
   const handleHome = () => {
-    history.push("/");
+    window.location="/";
   };
   return (
     <div
